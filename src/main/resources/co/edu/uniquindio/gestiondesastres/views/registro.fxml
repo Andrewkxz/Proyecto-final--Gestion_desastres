@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="co.edu.uniquindio.gestiondesastres.controllers.RegisterController">
+
+    <children>
+
+        <VBox spacing="15" alignment="CENTER">
+            <padding>
+                <Insets top="40" bottom="40" left="40" right="40"/>
+            </padding>
+
+            <Label text="Registro de Usuario"
+                   style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+            <Label fx:id="lblError" textFill="red"/>
+
+            <TextField fx:id="txtNombre" promptText="Nombre de usuario" maxWidth="250"/>
+            <PasswordField fx:id="txtPassword" promptText="Contraseña" maxWidth="250"/>
+
+            <ChoiceBox fx:id="choiceRol" maxWidth="250"/>
+
+            <Button text="Crear Cuenta" onAction="#registrar" maxWidth="250"/>
+
+            <Hyperlink text="¿Ya tienes cuenta? Iniciar sesión" onAction="#abrirLogin"/>
+
+        </VBox>
+
+    </children>
+</AnchorPane>

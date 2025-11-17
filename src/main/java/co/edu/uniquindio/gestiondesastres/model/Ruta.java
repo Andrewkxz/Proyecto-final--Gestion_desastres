@@ -1,14 +1,22 @@
 package co.edu.uniquindio.gestiondesastres.model;
 
 public class Ruta {
+    private String id;
     private String origen;
     private String destino;
     private double distancia;
+    private String estado;
 
-    public Ruta(String origen, String destino, double distancia) {
+    public Ruta(String id, String origen, String destino, double distancia, String estado) {
+        this.id = id;
         this.origen = origen;
         this.destino = destino;
         this.distancia = distancia;
+        this.estado = estado;
+    }
+
+    public String getId() {
+        return id;
     }
 
     public String getOrigen() {
@@ -21,6 +29,10 @@ public class Ruta {
 
     public double getDistancia() {
         return distancia;
+    }
+
+    public String getEstado() {
+        return estado;
     }
 
     @Override

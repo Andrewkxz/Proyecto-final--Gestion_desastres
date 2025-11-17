@@ -121,6 +121,38 @@ public class GrafoDirigido {
         verticeOrigen.agregarArista(new Arista(verticeDestino, peso));
     }
 
+    public boolean existeArista(String origen, String destino){
+        Vertice vertice = vertices.get(origen);
+        if(vertice == null) return false;
+
+        for(Arista arista : vertice.getAdyacentes()){
+            if(arista.getDestino().getNombre().equals(destino)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean eliminarArista(String origen, String destino){
+        Vertice vertice = vertices.get(origen);
+        if(vertice == null) return false;
+
+        return vertice.getAdyacentes().removeIf(arista -> arista.getDestino().getNombre().equals(destino));
+    }
+
+    public boolean modificarPeso(String origen, String destino, double nuevoPeso){
+        Vertice vertice = vertices.get(origen);
+        if(vertice == null) return false;
+
+        for(Arista arista : vertice.getAdyacentes()){
+            if(arista.getDestino().getNombre().equals(destino)){
+                arista.setPeso(nuevoPeso);
+                return true;
+            }
+        }
+        return false;
+    }
+
     public Vertice obtenerVertice(String nombre){
         return vertices.get(nombre);
     }

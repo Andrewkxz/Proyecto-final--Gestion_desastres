@@ -1,23 +1,26 @@
 package co.edu.uniquindio.gestiondesastres.model;
 
-import java.util.List;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-public class Main {
-    public static void main(String[] args) {
-        GrafoDirigido grafo = new GrafoDirigido();
+public class Main extends Application {
 
-        grafo.agregarArista("Bogota", "Medellin", 8.5);
-        grafo.agregarArista("Medellin", "Cali", 6.2);
-        grafo.agregarArista("Bogota", "Cali", 14.5);
-        grafo.agregarArista("Cali", "Cartagena", 10.0);
-        grafo.agregarArista("Medellin", "Cartagena", 9.0);
+    @Override
+    public void start(Stage stage) throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(
+                "/co/edu/uniquindio/gestiondesastres/view/views/login.fxml"
+        ));
 
-        grafo.mostrarGrafo();
-
-        // Calcular camino más corto
-        List<String> camino = grafo.obtenerCaminoMasCorto("Bogota", "Cartagena");
-
-        // Visualizar con el camino resaltado
-        VisualizarGrafo.mostrar(grafo, camino);
+        Scene scene = new Scene(loader.load());
+        stage.setScene(scene);
+        stage.setTitle("Sistema Gestión de Desastres - Login");
+        stage.show();
     }
+
+    public static void main(String[] args) {
+        launch();
+    }
+
 }

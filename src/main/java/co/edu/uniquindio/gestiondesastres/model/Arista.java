@@ -17,6 +17,10 @@ public class Arista {
         return peso;
     }
 
+    public void setPeso(double peso){
+        this.peso = peso;
+    }
+
     @Override
     public String toString() {
         return "destino -> " + destino.getNombre() + ", peso: " + "(" + peso + "km)";
