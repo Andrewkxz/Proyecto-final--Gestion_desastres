@@ -1,0 +1,1 @@
+comando para correr la interfaz gráfica: mvn javafx:run
