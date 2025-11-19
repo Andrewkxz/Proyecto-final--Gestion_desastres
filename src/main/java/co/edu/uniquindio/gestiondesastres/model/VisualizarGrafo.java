@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.Hashtable;
 
 import org.jgrapht.Graph;
-import org.jgrapht.ext.JGraphXAdapter;
+import org.magrapht.ext.JGraphXAdapter;
 import org.jgrapht.graph.DefaultWeightedEdge;
 import org.jgrapht.graph.SimpleDirectedWeightedGraph;
 

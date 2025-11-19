@@ -1,1 +1,2 @@
-usuario,contrasena,rol
+id,usuario,contrasena,rol
+U1,mateo,1234,ADMINISTRADOR
