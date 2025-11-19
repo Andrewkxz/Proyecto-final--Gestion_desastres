@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="co.edu.uniquindio.gestiondesastres.controllers.MapaController">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+    
+    <top>
+        <VBox spacing="10">
+            <Label text="Mapa Interactivo" styleClass="title-label"/>
+            <ToolBar>
+                <ToggleButton fx:id="btnMostrarRutas" text="Mostrar Rutas" onAction="#toggleRutas"/>
+                <ToggleButton fx:id="btnMostrarRecursos" text="Mostrar Recursos" onAction="#toggleRecursos"/>
+                <Separator orientation="VERTICAL"/>
+                <Button text="Acercar"/>
+                <Button text="Alejar"/>
+                <Separator orientation="VERTICAL"/>
+                <Button text="Centrar Mapa"/>
+            </ToolBar>
+        </VBox>
+    </top>
+    
+    <center>
+        <!-- Área del Mapa -->
+        <StackPane>
+            <Pane fx:id="panelMapa" style="-fx-background-color: #f0f0f0;"/>
+        </StackPane>
+    </center>
+    
+    <left>
+        <VBox spacing="10" prefWidth="250">
+            <TitledPane text="Ubicaciones" expanded="true">
+                <TreeView fx:id="arbolUbicaciones"/>
+            </TitledPane>
+            
+            <TitledPane text="Leyenda" expanded="true">
+                <VBox spacing="5">
+                    <Label text="🔴 Zona de Alto Riesgo"/>
+                    <Label text="🟡 Zona de Riesgo Medio"/>
+                    <Label text="🟢 Zona Segura"/>
+                    <Label text="📍 Punto de Evacuación"/>
+                    <Label text="🚑 Recurso Médico"/>
+                    <Label text="🚒 Recurso de Emergencia"/>
+                </VBox>
+            </TitledPane>
+        </VBox>
+    </left>
+    
+    <right>
+        <VBox spacing="10" prefWidth="200">
+            <TitledPane text="Información" expanded="true">
+                <VBox spacing="5">
+                    <Label text="Zona Seleccionada: "/>
+                    <Label text="Nivel de Riesgo: "/>
+                    <Label text="Recursos Cercanos: "/>
+                    <Label text="Rutas Disponibles: "/>
+                </VBox>
+            </TitledPane>
+        </VBox>
+    </right>
+</BorderPane>

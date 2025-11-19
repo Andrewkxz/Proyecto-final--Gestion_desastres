@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="co.edu.uniquindio.gestiondesastres.controllers.RutasController">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+    
+    <top>
+        <VBox spacing="10">
+            <Label text="Planificación de Rutas" styleClass="title-label"/>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <ComboBox fx:id="comboOrigen" promptText="Punto de Origen"/>
+                <ComboBox fx:id="comboDestino" promptText="Punto de Destino"/>
+                <Button text="Calcular Ruta" onAction="#calcularRuta"/>
+            </HBox>
+            <Separator/>
+        </VBox>
+    </top>
+    
+    <center>
+        <!-- Área para visualización del grafo -->
+        <StackPane>
+            <Pane fx:id="panelGrafo" style="-fx-background-color: white;"/>
+        </StackPane>
+    </center>
+    
+    <right>
+        <VBox spacing="10" prefWidth="250">
+            <TitledPane text="Rutas Disponibles" expanded="true">
+                <ListView fx:id="listaRutas"/>
+            </TitledPane>
+            
+            <TitledPane text="Detalles de Ruta" expanded="true">
+                <VBox spacing="5">
+                    <Label text="Distancia Total: "/>
+                    <Label text="Tiempo Estimado: "/>
+                    <Label text="Puntos de Control: "/>
+                    <TextArea promptText="Instrucciones de ruta..." 
+                             wrapText="true" 
+                             editable="false" 
+                             prefRowCount="4"/>
+                </VBox>
+            </TitledPane>
+        </VBox>
+    </right>
+</BorderPane>

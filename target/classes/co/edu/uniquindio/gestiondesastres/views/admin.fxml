@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="co.edu.uniquindio.gestiondesastres.controllers.AdminController">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+    
+    <top>
+        <VBox spacing="10">
+            <Label text="Administración de Recursos y Equipos" styleClass="title-label"/>
+            <Separator/>
+        </VBox>
+    </top>
+    
+    <center>
+        <SplitPane dividerPositions="0.5" orientation="VERTICAL">
+            <!-- Panel Superior - Gestión de Recursos -->
+            <VBox spacing="10">
+                <TitledPane text="Gestión de Recursos" expanded="true">
+                    <VBox spacing="10">
+                        <HBox spacing="10" alignment="CENTER_LEFT">
+                            <ComboBox fx:id="comboZonas" promptText="Seleccionar Zona"/>
+                            <Button fx:id="btnAsignarRecursos" text="Asignar Recursos" onAction="#asignarRecursos"/>
+                        </HBox>
+                        <TableView fx:id="tablaRecursos">
+                            <columns>
+                                <TableColumn text="ID" />
+                                <TableColumn text="Tipo" />
+                                <TableColumn text="Cantidad" />
+                                <TableColumn text="Estado" />
+                                <TableColumn text="Ubicación" />
+                            </columns>
+                        </TableView>
+                    </VBox>
+                </TitledPane>
+            </VBox>
+            
+            <!-- Panel Inferior - Equipos de Rescate -->
+            <VBox spacing="10">
+                <TitledPane text="Equipos de Rescate" expanded="true">
+                    <TableView fx:id="tablaEquipos">
+                        <columns>
+                            <TableColumn text="ID Equipo" />
+                            <TableColumn text="Miembros" />
+                            <TableColumn text="Especialidad" />
+                            <TableColumn text="Zona Asignada" />
+                            <TableColumn text="Estado" />
+                        </columns>
+                    </TableView>
+                </TitledPane>
+            </VBox>
+        </SplitPane>
+    </center>
+    
+    <right>
+        <VBox spacing="10" prefWidth="200">
+            <TitledPane text="Acciones Rápidas" expanded="true">
+                    <VBox spacing="5">
+                    <Button text="Nuevo Recurso" maxWidth="Infinity" onAction="#nuevoRecurso"/>
+                    <Button text="Nuevo Equipo" maxWidth="Infinity" onAction="#nuevoEquipo"/>
+                    <Button text="Generar Reporte" maxWidth="Infinity" onAction="#generarReporte"/>
+                </VBox>
+            </TitledPane>
+        </VBox>
+    </right>
+</BorderPane>

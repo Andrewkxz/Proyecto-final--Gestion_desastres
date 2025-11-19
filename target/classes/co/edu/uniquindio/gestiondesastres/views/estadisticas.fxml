@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="co.edu.uniquindio.gestiondesastres.controllers.EstadisticasController">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+    
+    <top>
+        <VBox spacing="10">
+            <Label text="Estadísticas y Reportes" styleClass="title-label"/>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Periodo:"/>
+                <DatePicker fx:id="fechaInicio" promptText="Fecha Inicio"/>
+                <DatePicker fx:id="fechaFin" promptText="Fecha Fin"/>
+                <Button text="Actualizar" onAction="#actualizarEstadisticas"/>
+            </HBox>
+            <Separator/>
+        </VBox>
+    </top>
+    
+    <center>
+        <GridPane hgap="20" vgap="20">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="300"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="300"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints vgrow="SOMETIMES" minHeight="250"/>
+                <RowConstraints vgrow="SOMETIMES" minHeight="250"/>
+            </rowConstraints>
+            
+            <!-- Gráfica de Recursos -->
+            <TitledPane text="Distribución de Recursos" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <PieChart fx:id="graficaRecursos"/>
+            </TitledPane>
+            
+            <!-- Gráfica de Evacuaciones -->
+            <TitledPane text="Evacuaciones por Zona" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                <BarChart fx:id="graficaEvacuaciones">
+                    <xAxis>
+                        <CategoryAxis label="Zonas"/>
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis label="Personas Evacuadas"/>
+                    </yAxis>
+                </BarChart>
+            </TitledPane>
+            
+            <!-- Tabla de Resumen -->
+            <TitledPane text="Resumen General" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="2">
+                <TableView>
+                    <columns>
+                        <TableColumn text="Métrica"/>
+                        <TableColumn text="Valor"/>
+                        <TableColumn text="Cambio"/>
+                    </columns>
+                </TableView>
+            </TitledPane>
+        </GridPane>
+    </center>
+    
+    <right>
+        <VBox spacing="10" prefWidth="200">
+            <TitledPane text="Acciones" expanded="true">
+                <VBox spacing="5">
+                    <Button text="Exportar PDF" maxWidth="Infinity"/>
+                    <Button text="Exportar Excel" maxWidth="Infinity"/>
+                    <Button text="Imprimir" maxWidth="Infinity"/>
+                </VBox>
+            </TitledPane>
+        </VBox>
+    </right>
+</BorderPane>
