@@ -5,34 +5,28 @@
 <?import javafx.geometry.Insets?>
 
 <BorderPane xmlns="http://javafx.com/javafx/17"
-                xmlns:fx="http://javafx.com/fxml/1"
-                fx:controller="co.edu.uniquindio.gestiondesastres.controllers.MainController">
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="co.edu.uniquindio.gestiondesastres.controllers.MainController">
 
     <top>
         <ToolBar>
-            <Label text="🛰️ Sistema de Gestión de Desastres Naturales" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <Label text="🛰️ Sistema de Gestión de Desastres Naturales" 
+                   style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <Pane HBox.hgrow="ALWAYS"/>
+            <Label fx:id="lblUsuarioActual" text="Usuario: ---"/>
         </ToolBar>
     </top>
 
     <center>
         <TabPane fx:id="tabPanePrincipal" tabClosingPolicy="UNAVAILABLE">
             <tabs>
-                <Tab text="Inicio">
-                    <fx:include source="inicio.fxml"/>
-                </Tab>
-                <Tab text="Administración">
-                    <fx:include source="admin.fxml"/>
-                </Tab>
-                <Tab text="Rutas">
-                    <fx:include source="rutas.fxml"/>
-                </Tab>
-                <Tab text="Estadísticas">
-                    <fx:include source="estadisticas.fxml"/>
-                </Tab>
-                <Tab text="Mapa">
-                    <fx:include source="mapa.fxml"/>
-                </Tab>
+                <Tab fx:id="tabInicio" text="Inicio" />
+                <Tab fx:id="tabAdmin" text="Administración" />
+                <Tab fx:id="tabRutas" text="Rutas" />
+                <Tab fx:id="tabEstadisticas" text="Estadísticas" />
+                <Tab fx:id="tabMapa" text="Mapa" />
             </tabs>
         </TabPane>
     </center>
+
 </BorderPane>

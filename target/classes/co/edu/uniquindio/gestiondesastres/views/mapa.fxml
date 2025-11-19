@@ -13,15 +13,16 @@
     <top>
         <VBox spacing="10">
             <Label text="Mapa Interactivo" styleClass="title-label"/>
-            <ToolBar>
-                <ToggleButton fx:id="btnMostrarRutas" text="Mostrar Rutas" onAction="#toggleRutas"/>
-                <ToggleButton fx:id="btnMostrarRecursos" text="Mostrar Recursos" onAction="#toggleRecursos"/>
-                <Separator orientation="VERTICAL"/>
-                <Button text="Acercar"/>
-                <Button text="Alejar"/>
-                <Separator orientation="VERTICAL"/>
-                <Button text="Centrar Mapa"/>
-            </ToolBar>
+                <ToolBar>
+                    <ToggleButton fx:id="btnMostrarRutas" text="Mostrar Rutas" onAction="#toggleRutas"/>
+                    <ToggleButton fx:id="btnMostrarRecursos" text="Mostrar Recursos" onAction="#toggleRecursos"/>
+                    <Separator orientation="VERTICAL"/>
+                    <Button text="Acercar"/>
+                    <Button text="Alejar"/>
+                    <Separator orientation="VERTICAL"/>
+                    <Button text="Centrar Mapa" onAction="#onCentrar"/>
+                    <Label fx:id="lblMapaStatus" text="Estado del mapa..." />
+                </ToolBar>
         </VBox>
     </top>
     

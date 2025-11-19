@@ -54,11 +54,11 @@
             
             <!-- Tabla de Resumen -->
             <TitledPane text="Resumen General" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="2">
-                <TableView>
+                <TableView fx:id="tablaResumen">
                     <columns>
-                        <TableColumn text="Métrica"/>
-                        <TableColumn text="Valor"/>
-                        <TableColumn text="Cambio"/>
+                        <TableColumn fx:id="colMetrica" text="Métrica"/>
+                        <TableColumn fx:id="colValor" text="Valor"/>
+                        <TableColumn fx:id="colCambio" text="Cambio"/>
                     </columns>
                 </TableView>
             </TitledPane>

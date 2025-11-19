@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="co.edu.uniquindio.gestiondesastres.controllers.RegistroController"
+      spacing="10" alignment="CENTER" style="-fx-padding:20; -fx-background-color: transparent;">
+    <Label text="Registro" styleClass="title-label" />
+    <GridPane hgap="10" vgap="10">
+        <columnConstraints>
+            <ColumnConstraints percentWidth="30" />
+            <ColumnConstraints percentWidth="70" />
+        </columnConstraints>
+        <Label text="Usuario:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+        <TextField fx:id="txtUsuario" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+        <Label text="Contraseña:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+        <PasswordField fx:id="txtContrasena" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+        <Label text="Rol:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+        <ChoiceBox fx:id="choiceRol" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+    </GridPane>
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Registrar" onAction="#onRegistrar" />
+        <Button text="Cancelar" onAction="#onCancelar" />
+    </HBox>
+</VBox>
