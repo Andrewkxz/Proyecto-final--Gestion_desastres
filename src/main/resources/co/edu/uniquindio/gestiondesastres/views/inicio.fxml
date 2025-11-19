@@ -21,13 +21,13 @@
             <!-- Panel de Zonas Afectadas -->
             <TitledPane text="Zonas Afectadas" expanded="true">
                 <TableView fx:id="tablaZonasAfectadas">
-                    <columns>
-                        <TableColumn text="Zona" />
-                        <TableColumn text="Nivel de Riesgo" />
-                        <TableColumn text="Estado" />
-                        <TableColumn text="Recursos Asignados" />
-                    </columns>
-                </TableView>
+                <columns>
+                <TableColumn fx:id="colZona" text="Zona"/>
+                <TableColumn fx:id="colRiesgo" text="Riesgo"/>
+                <TableColumn fx:id="colEstado" text="Estado"/>
+                <TableColumn fx:id="colRecursos" text="Recursos"/>
+            </columns>
+        </TableView>
             </TitledPane>
             
             <!-- Panel de Estadísticas Rápidas -->
@@ -50,6 +50,9 @@
         <VBox spacing="10" prefWidth="200">
             <TitledPane text="Alertas Activas" expanded="true">
                 <ListView />
+            </TitledPane>
+            <TitledPane text="Permisos / Acciones" expanded="true">
+                <ListView fx:id="listPermisos" />
             </TitledPane>
         </VBox>
     </right>
